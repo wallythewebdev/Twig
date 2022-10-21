@@ -13,6 +13,11 @@ format is free-form):
     {# using % as a delimiter is purely conventional and optional #}
     {{ "I like this and --that--."|replace({'this': fruit, '--that--': "oranges"}) }}
     {# outputs "I like apples and oranges" #}
+    
+    {# Variables can be used for dynamic replacement by wrapping the variable name in () #}
+    {% set var = "value" %}
+    {{ "Replace a --var--"|replace({'--var--': (var) }) }}
+    {# outputs "Replace a value" #}
 
 Arguments
 ---------
